@@ -1,9 +1,15 @@
 {
 	"name": "monorepo-module-federation",
 	"version": "1.0.0",
+	"scripts": {
+		"start": " concurrently \"npm --prefix ./services/host run dev\" \"npm --prefix ./services/shop run dev\" \"npm --prefix ./services/admin run dev\" "
+	},
 	"workspaces": [
 		"packages/*",
 		"services/*"
 	],
+	"dependencies": {
+		"concurrently": "^8.2.2"
+	},
 	"license": "ISC"
 }

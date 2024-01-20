@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"start": "webpack serve --env mode=production",
+		"start:all": "concurrently \"npm start\" \"cd ../\" \"cd ./admin\" \"npm start\"",
 		"dev": "webpack serve --env mode=development",
 		"build:dev": "webpack --env mode=development",
 		"build:prod": "webpack --env mode=production",
@@ -43,11 +44,11 @@
 		"webpack-dev-server": "^4.15.1"
 	},
 	"dependencies": {
+		"@packages/build-config": "*",
+		"@packages/shared": "*",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.19.0",
-		"@packages/shared": "*",
-		"@packages/build-config": "*"
+		"react-router-dom": "^6.19.0"
 	},
 	"keywords": [],
 	"author": "",
